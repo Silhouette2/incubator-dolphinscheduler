@@ -25,7 +25,7 @@ if not defined VERSION (
 
 if not defined DOCKER_REPO (
     echo "set environment variable [DOCKER_REPO]"
-    set DOCKER_REPO='dolphinscheduler'
+    set DOCKER_REPO="dolphinscheduler"
 )
 
 echo "Version: %VERSION%"
@@ -35,7 +35,7 @@ echo "Current Directory is %cd%"
 
 :: maven package(Project Directory)
 echo "call mvn clean compile package -Prelease"
-call mvn clean compile package -Prelease -DskipTests=true
+call mvn clean compile package -Prelease -DskipTests=true -Dmaven.compile.fork=true
 if "%errorlevel%"=="1" goto :mvnFailed
 
 :: move dolphinscheduler-bin.tar.gz file to docker/build directory

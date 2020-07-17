@@ -25,12 +25,12 @@ ENV DEBIAN_FRONTEND noninteractive
 
 #1. install dos2unix shadow bash openrc python sudo vim wget iputils net-tools ssh pip tini kazoo.
 #If install slowly, you can replcae alpine's mirror with aliyun's mirror, Example:
-#RUN sed -i "s/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g" /etc/apk/repositories
+RUN sed -i "s/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g" /etc/apk/repositories
 RUN apk update && \
     apk add dos2unix shadow bash openrc python python3 sudo vim wget iputils net-tools openssh-server py2-pip tini && \
     apk add --update procps && \
     openrc boot && \
-    pip install kazoo
+    pip install kazoo -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 #2. install jdk
 RUN apk add openjdk8
@@ -38,8 +38,8 @@ ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk
 ENV PATH $JAVA_HOME/bin:$PATH
 
 #3. add dolphinscheduler
-ADD ./apache-dolphinscheduler-incubating-${VERSION}-dolphinscheduler-bin.tar.gz /opt/
-RUN mv /opt/apache-dolphinscheduler-incubating-${VERSION}-dolphinscheduler-bin/ /opt/dolphinscheduler/
+ADD ./apache-dolphinscheduler-incubating-${VERSION}-SNAPSHOT-dolphinscheduler-bin.tar.gz /opt/
+RUN mv /opt/apache-dolphinscheduler-incubating-${VERSION}-SNAPSHOT-dolphinscheduler-bin/ /opt/dolphinscheduler/
 ENV DOLPHINSCHEDULER_HOME /opt/dolphinscheduler
 
 #4. install pg
