@@ -792,12 +792,14 @@
                         <include>**/dao/mapper/CommandMapperTest.java</include>
                         <include>**/dao/mapper/ConnectionFactoryTest.java</include>
                         <include>**/dao/mapper/DataSourceMapperTest.java</include>
+                        <include>**/dao/entity/UdfFuncTest.java</include>
                         <include>**/remote/JsonSerializerTest.java</include>
                         <include>**/remote/RemoveTaskLogResponseCommandTest.java</include>
                         <include>**/remote/RemoveTaskLogRequestCommandTest.java</include>
                         <!--<include>**/remote/NettyRemotingClientTest.java</include>-->
                         <include>**/remote/ResponseFutureTest.java</include>
                         <!--<include>**/server/log/LoggerServerTest.java</include>-->
+                        <include>**/server/entity/SQLTaskExecutionContextTest.java</include>
                         <include>**/server/log/MasterLogFilterTest.java</include>
                         <include>**/server/log/SensitiveDataConverterTest.java</include>
                         <!--<include>**/server/log/TaskLogDiscriminatorTest.java</include>-->
@@ -824,7 +826,7 @@
                         <include>**/server/utils/ProcessUtilsTest.java</include>
                         <include>**/server/utils/SparkArgsUtilsTest.java</include>
                         <!--<include>**/server/worker/processor/TaskCallbackServiceTest.java</include>-->
-                        <!--<include>**/server/worker/registry/WorkerRegistryTest.java</include>-->
+                        <include>**/server/worker/registry/WorkerRegistryTest.java</include>
                         <include>**/server/worker/shell/ShellCommandExecutorTest.java</include>
                         <include>**/server/worker/sql/SqlExecutorTest.java</include>
                         <include>**/server/worker/task/spark/SparkTaskTest.java</include>
@@ -859,6 +861,7 @@
                         <include>**/dao/utils/DagHelperTest.java</include>
                         <include>**/dao/AlertDaoTest.java</include>
                         <include>**/dao/datasource/OracleDataSourceTest.java</include>
+                        <include>**/dao/datasource/HiveDataSourceTest.java</include>
                         <include>**/dao/upgrade/ProcessDefinitionDaoTest.java</include>
                         <include>**/dao/upgrade/WokrerGrouopDaoTest.java</include>
                         <include>**/dao/upgrade/UpgradeDaoTest.java</include>
